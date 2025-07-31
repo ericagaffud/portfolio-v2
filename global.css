@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Boogaloo&family=Mansalva&display=swap');
+
+:root {
+    --primary-color: #FAE53F;
+    --secondary-color: #E90074;
+    --tertiary-color: #FF4191;
+    
+    background-color: #000000;
+    color: #ffffff;
+
+    --font-boogaloo: "Boogaloo", sans-serif;
+    --font-mansalva: "Mansalva", sans-serif;
+}
+
+body {
+    margin: clamp(1rem, 0.265rem + 4.278vw, 3rem) clamp(1rem, -0.471rem + 8.556vw, 5rem);
+}
+
+@media only screen and (min-width: 1024px) {
+    
+}
