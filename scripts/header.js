@@ -77,4 +77,10 @@ $(window).on('scroll', function () {
             aboutSections.slice(index + 1).removeClass('active prev');
         }
     });
+
+    if (scrollY >= 4200) {
+        $('.about-section').css("position", "relative");
+    } else {
+        $('.about-section').css("position", "sticky");
+    }
 });

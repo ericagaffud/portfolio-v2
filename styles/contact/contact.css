@@ -1,0 +1,108 @@
+.contact-title {
+  height: 95vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mansalva);
+  font-size: clamp(2rem, 0.897rem + 6.417vw, 5rem);
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 95vh;
+}
+.contact-intro {
+  text-align: center;
+}
+.contact-intro * {
+  margin-block: 0 !important;
+}
+.contact-intro h1 {
+  font-family: var(--font-mansalva);
+  font-size: clamp(2rem, 0.897rem + 6.417vw, 5rem);
+  color: var(--primary-color);
+}
+.contact-intro h4 {
+  font-family: var(--font-boogaloo);
+  font-size: clamp(1rem, 0.89rem + 0.642vw, 1.3rem);
+  max-width: 45rem;
+  margin-inline: auto;
+}
+.contact-intro img {
+  width: 100%;
+  height: 3rem;
+}
+.contact-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  gap: 3rem 1rem;
+}
+.contact-details-info {
+  font-size: clamp(1rem, 0.89rem + 0.642vw, 1.3rem);
+  font-family: var(--font-boogaloo);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.contact-details-info i {
+  color: var(--secondary-color);
+}
+.contact-details-info a {
+  text-decoration: none;
+  color: white;
+}
+.contact-accent {
+  position: absolute;
+  z-index: -1;
+  color: #141414;
+  font-family: var(--font-boogaloo);
+  font-size: clamp(2rem, 1.441rem + 3.252vw, 3rem);
+}
+.contact-accent h1 {
+  margin-block: 0 !important;
+}
+
+@media only screen and (min-width: 768px) {
+  .contact-accent {
+    font-size: clamp(5rem, -1.024rem + 12.549vw, 7rem);
+  }
+  .contact-accent h1:nth-child(1) {
+    display: none;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .contact {
+    gap: 7rem;
+  }
+  .contact-intro h4 {
+    font-size: clamp(1.3rem, 0.633rem + 1.042vw, 2.3rem);
+    max-width: 60rem;
+  }
+  .contact-intro img {
+    height: 23rem;
+    width: 90%;
+    max-width: 83rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+  }
+  .contact-details {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .contact-details-info {
+    font-size: clamp(1.3rem, 0.633rem + 1.042vw, 2.3rem);
+  }
+  .contact-accent {
+    font-size: clamp(7rem, 2.333rem + 7.292vw, 14rem);
+  }
+  .contact-accent h1 {
+    line-height: clamp(13rem, 7.667rem + 8.333vw, 21rem);
+  }
+}/*# sourceMappingURL=contact.css.map */

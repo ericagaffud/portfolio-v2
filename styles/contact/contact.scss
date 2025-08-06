@@ -1,0 +1,132 @@
+.contact-title {
+    height: 95vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mansalva);
+    font-size: clamp(2rem, 0.897rem + 6.417vw, 5rem);
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 95vh;
+
+    &-intro {
+        text-align: center;
+        * {
+            margin-block: 0 !important;
+        }
+
+        h1 {
+            font-family: var(--font-mansalva);
+            font-size: clamp(2rem, 0.897rem + 6.417vw, 5rem);
+            color: var(--primary-color);
+        }
+
+        h4 {
+            font-family: var(--font-boogaloo);
+            font-size: clamp(1rem, 0.89rem + 0.642vw, 1.3rem);
+            max-width: 45rem;
+            margin-inline: auto;
+        }
+
+        img {
+            width: 100%;
+            height: 3rem;
+        }
+    }
+
+    &-details {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        position: relative;
+        gap: 3rem 1rem;
+
+        &-info {
+            font-size: clamp(1rem, 0.89rem + 0.642vw, 1.3rem);
+            font-family: var(--font-boogaloo);
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+
+            i {
+                color: var(--secondary-color);
+            }
+
+            a {
+                text-decoration: none;
+                color: white;
+            }
+        }    
+    }
+
+    &-accent {
+        position: absolute;
+        z-index: -1;
+        color: #141414;
+        font-family: var(--font-boogaloo);
+        font-size: clamp(2rem, 1.441rem + 3.252vw, 3rem);
+
+        h1 {
+            margin-block: 0 !important;
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .contact {
+        &-accent {
+            font-size: clamp(5rem, -1.024rem + 12.549vw, 7rem);
+
+            h1:nth-child(1) {
+                display: none;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .contact {
+        gap: 7rem;
+
+        &-intro {
+            h4 {
+                font-size: clamp(1.3rem, 0.633rem + 1.042vw, 2.3rem);
+                max-width: 60rem;
+            }
+
+            img {
+                height: 23rem;
+                width: 90%;
+                max-width: 83rem;
+
+                position: absolute;
+                left: 0;
+                right: 0;
+                margin-inline: auto;
+            }
+        }
+
+        &-details {
+            grid-template-columns: repeat(4, 1fr);
+
+            &-info {
+                font-size: clamp(1.3rem, 0.633rem + 1.042vw, 2.3rem);
+            }
+        }
+
+        &-accent {
+            font-size: clamp(7rem, 2.333rem + 7.292vw, 14rem);
+
+            h1 {
+                line-height: clamp(13rem, 7.667rem + 8.333vw, 21rem);
+            }
+        }
+    }
+}

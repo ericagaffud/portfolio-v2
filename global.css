@@ -13,7 +13,7 @@
 }
 
 body {
-    margin: clamp(1rem, 0.265rem + 4.278vw, 3rem) clamp(1rem, -1.206rem + 12.834vw, 7rem) !important;
+    margin: clamp(1rem, 0.265rem + 4.278vw, 3rem) clamp(1rem, -1.206rem + 12.834vw, 7rem) 0 !important;
 }
 
 h1, h2, h3, h4, h5, h6 {
