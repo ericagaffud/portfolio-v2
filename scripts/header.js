@@ -13,12 +13,25 @@ $(document).on('click', '.close-menu', function () {
 });
 
 $(window).on('scroll', function () {
-    console.log(window.scrollY);
+    console.log("Y", window.scrollY);
+});
+
+$(window).on('wheel', function (e) {
+    const delta = e.originalEvent.deltaY;
+
+    console.log("Delta", delta);
+    if (window.scrollY > 3600 && window.scrollY < 3900) {
+        if (delta < 0) {
+            $('.about-spacer').css("height", "800px");
+        }
+    }
 });
 
 $(window).on('scroll', function () {
-    const baseOffsets = [100, 1000];
+    const baseOffsets = [400, 1400];
+    const aboutBaseOffsets = [3000, 3300, 3600, 3900]
     const spacing = 30;
+    const aboutSections = $('.about-me');
 
     $('.project-info').each(function (projectIndex) {
         const triggerScroll = baseOffsets[projectIndex];
@@ -48,5 +61,20 @@ $(window).on('scroll', function () {
                 $(this).removeClass('show');
             }
         });
+    });
+
+     aboutSections.each(function (index) {
+        const triggerScroll = aboutBaseOffsets[index];
+        const triggerStart = triggerScroll + (index * spacing);
+        const triggerEnd = triggerScroll + ((index + 1) * spacing);
+
+        if (window.scrollY >= triggerStart && window.scrollY < triggerEnd) {
+
+            $(this).addClass('active').removeClass('prev');
+
+            aboutSections.slice(0, index).addClass('prev').removeClass('active');
+            
+            aboutSections.slice(index + 1).removeClass('active prev');
+        }
     });
 });

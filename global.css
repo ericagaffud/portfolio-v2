@@ -13,9 +13,23 @@
 }
 
 body {
-    margin: clamp(1rem, 0.265rem + 4.278vw, 3rem) clamp(1rem, -0.471rem + 8.556vw, 5rem);
+    margin: clamp(1rem, 0.265rem + 4.278vw, 3rem) clamp(1rem, -1.206rem + 12.834vw, 7rem) !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.position-relative {
+    position: relative;
 }
 
 @media only screen and (min-width: 1024px) {
-    
+    body {
+        margin-inline: clamp(5rem, 1.667rem + 5.208vw, 10rem) !important;
+    }
 }

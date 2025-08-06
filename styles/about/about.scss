@@ -1,0 +1,310 @@
+.about-title {
+    height: 75vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mansalva);
+    font-size: clamp(2rem, 0.897rem + 6.417vw, 5rem);
+}
+
+.about-section {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.about-me {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: transform 1s ease, opacity 1s ease;
+    opacity: 0;
+    transform: translateX(100%);
+    height: 95vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .show {
+        opacity: 1 !important;
+        transform: translateX(0) !important;
+    }
+
+    &-main {
+        // opacity: 0;
+        // transform: translateX(300px);
+        // transition: all 1.2s ease;
+
+        * {
+            margin-block: 0 !important;
+        }
+
+        img {
+            height: 50vh;
+        }
+
+        h1 {
+            font-family: var(--font-mansalva);
+            color: var(--primary-color);
+            margin-top: -1rem !important;
+        }
+
+        h4 {
+            font-family: var(--font-mansalva);
+            font-size: clamp(1.4rem, 1.253rem + 0.856vw, 1.8rem);
+        }
+
+        h5 {
+            font-size: clamp(1rem, 0.89rem + 0.642vw, 1.3rem);
+            letter-spacing: 1px;
+            font-family: var(--font-boogaloo);
+        }
+    }
+
+    &-info {
+        // opacity: 0;
+        // transform: translateX(300px);
+        // transition: all 1.2s ease;
+
+        * {
+            margin-block: 0 !important;
+        }
+
+        h4 {
+            font-family: var(--font-mansalva);
+            font-size: clamp(1.4rem, 1.253rem + 0.856vw, 1.8rem);
+            position: absolute;
+            top: 15vh;
+            right: 0;
+        }
+
+        > h5 {
+            font-size: clamp(1rem, 0.89rem + 0.642vw, 1.3rem);
+            letter-spacing: 1px;
+            font-family: var(--font-boogaloo);
+            text-align: center;
+        }
+
+        .name {
+            font-family: var(--font-mansalva);
+            color: var(--primary-color);
+        }
+
+        .position {
+            font-family: var(--font-mansalva);
+            color: var(--secondary-color);
+        }
+
+        .timeline {
+            display: none;
+        }
+
+        .timeline-vertical {
+            width: auto;
+            height: 22rem;
+            position: absolute;
+            top: 0;
+            left: -2rem;
+        }
+
+        .experiences {
+            h6 {
+                font-family: var(--font-boogaloo);
+                font-size: clamp(1rem, 0.89rem + 0.642vw, 1.3rem);
+            }
+
+            h5 {
+                font-family: var(--font-mansalva);
+                color: var(--secondary-color);
+                font-size: clamp(1.4rem, 1.253rem + 0.856vw, 1.8rem);
+            }
+
+            &:nth-child(2) {
+                margin-bottom: 3rem !important;
+            }
+        }
+    }
+
+    .experience {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 3rem;
+        margin-left: 2rem;
+        margin-top: 1rem;
+    }
+
+    .career {
+        display: flex;
+        gap: 1rem;
+        margin-top: 0.5rem;
+
+        &-info {
+
+            h5 {
+                color: var(--secondary-color);
+                font-family: var(--font-mansalva);
+                padding: 10px;
+                border: 1px solid #ffffff;
+                border-radius: 15px;
+                width: fit-content;
+                margin-bottom: 1rem !important;
+            }
+
+            &:nth-child(1) {
+                justify-items: flex-end;
+            }
+        }
+    }
+
+    .proficiency {
+        display: flex;
+        overflow-x: hidden;
+        margin-top: 2rem;
+        gap: clamp(1rem, 0.278rem + 4.201vw, 7rem);
+
+        img {
+            width: 50%;
+            max-width: 250px;
+        }
+    }
+}
+
+.active {
+    opacity: 1;
+    transform: translateX(0);
+    z-index: 2;
+}
+
+.prev {
+    transform: translateX(-100%);
+    opacity: 0;
+    z-index: 1;
+}
+
+.about-spacer {
+  height: 600px;
+}
+
+@media only screen and (min-width: 768px) {
+    .section-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+    .about-me {
+        &-main {
+            h5 {
+                text-align: justify;
+            }
+        }
+        &-info {
+            h4 {
+                position: initial;
+                margin-bottom: 2rem !important;
+            }
+
+            > h5 {
+                text-align: justify;
+            }
+
+            .experiences {
+                text-align: center;
+
+                h6 {
+                    margin-bottom: 3rem !important;
+                }
+            }
+
+            .timeline {
+                display: block;
+                width: 75%;
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 2rem;
+                margin: auto;
+            }
+
+            .timeline-vertical {
+                display: none;
+            }
+        }
+
+        .career {
+            justify-content: center;
+        }
+
+        .experience {
+            flex-direction: row;
+            margin-left: 0;
+            margin-top: 4rem;
+        }
+    }
+}
+
+
+@media only screen and (min-width: 1024px) {
+    .about-me {
+        &-main {
+            h1 {
+                font-size: clamp(3rem, 1.667rem + 2.083vw, 5rem);
+            }
+
+            h4 {
+                font-size: clamp(1.8rem, 1.133rem + 1.042vw, 2.8rem);
+            }
+
+            h5 {
+                font-size: clamp(1.3rem, 0.833rem + 0.729vw, 2rem);
+            }
+
+            img {
+                width: clamp(30rem, 20rem + 15.625vw, 45rem);
+                height: auto;
+            }
+        }
+
+        &-info {
+            h4 {
+                font-size: clamp(1.8rem, 1.133rem + 1.042vw, 2.8rem);
+            }
+
+            > h5 {
+                font-size: clamp(1.3rem, 0.633rem + 1.042vw, 2.3rem);
+            }
+
+            .experiences {
+                h6 {
+                    margin-bottom: clamp(4rem, 2.667rem + 2.083vw, 6rem) !important;
+                }
+            }
+        }
+
+        .career {
+            &-info {
+                h5 {
+                    font-size: clamp(1.3rem, 0.833rem + 0.729vw, 2rem);
+                }
+            }
+        }
+
+        .experience {
+            gap: clamp(4rem, 1.333rem + 4.167vw, 8rem);
+        }
+
+        .proficiency {
+            img {
+                max-width: 250px;
+            }
+        }
+    }
+}
