@@ -12,6 +12,21 @@ $(document).on('click', '.close-menu', function () {
     $('body').css("overflow-y", "auto");
 });
 
+$(document).on('click', '.header-menu-link > li > a, .header-menu-scroll > li > a', function () {
+    var target = $(this).attr('href');
+    var targetOffset = $(target).offset().top;
+
+    $('html, body').animate({
+        scrollTop: targetOffset
+    }, 2000);
+
+    $('.header-menu-link').fadeOut(300, function () {
+        $(this).removeClass('show').css('display', 'none');
+    });
+
+    $('body').css("overflow-y", "auto");
+});
+
 $(window).on('scroll', function () {
     console.log("Y", window.scrollY);
 });
@@ -78,9 +93,33 @@ $(window).on('scroll', function () {
         }
     });
 
-    if (scrollY >= 4200) {
+    if (window.scrollY >= 4200) {
         $('.about-section').css("position", "relative");
     } else {
         $('.about-section').css("position", "sticky");
     }
+
+    const scrollY = window.scrollY;
+    const $items = $('.header-menu-scroll > li > a');
+
+    const thresholds = [0, 2400, 5000];
+
+    let activeIndex = -1;
+
+    thresholds.forEach((threshold, index) => {
+        if (scrollY >= threshold) {
+            activeIndex = index;
+        }
+    });
+
+    $items.each(function(index) {
+        const $item = $(this);
+        if (index <= activeIndex) {
+            $item.css("display", "block");
+        } else {
+            $item.css("display", "none");
+        }
+
+        $item.css("color", index === activeIndex ? "var(--primary-color)" : "#fff");
+    });
 });

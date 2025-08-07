@@ -10,6 +10,7 @@
 .project {
   display: flex;
   flex-direction: column;
+  overflow-y: hidden;
 }
 .project-info {
   text-align: center;
