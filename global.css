@@ -28,6 +28,48 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
 }
 
+.version {
+    padding-block: 2rem;
+    display: flex;
+    justify-content: end;
+    gap: 1rem;
+
+    a {
+        text-decoration: none;
+        color: var(--primary-color);
+        font-size: clamp(1rem, 0.886rem + 0.571vw, 1.8rem);
+        font-family: var(--font-mansalva);
+    }
+
+    a:hover {
+        transform: scale(1.2);
+    }
+
+    .active {
+        color: var(--secondary-color);
+        pointer-events: none;
+        cursor: default;
+    }
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color); 
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-color); 
+}
+
 @media only screen and (min-width: 1024px) {
     body {
         margin-inline: clamp(5rem, 1.667rem + 5.208vw, 10rem) !important;
