@@ -46,6 +46,14 @@
   transform: scale(0.98);
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
+.header-menu-link .version a:hover {
+  color: var(--secondary-color);
+}
+.header-menu-link .version .active {
+  color: var(--secondary-color);
+  pointer-events: none;
+  cursor: default;
+}
 .header-menu-link .close-menu {
   font-family: var(--font-boogaloo);
   font-size: 64px;
@@ -53,6 +61,11 @@
   position: absolute;
   top: 0;
   right: 20px;
+  z-index: 2;
+}
+.header-menu-link .close-menu:hover {
+  transform: scale(1.2);
+  color: gray;
 }
 .header .show {
   display: flex !important;
@@ -86,6 +99,27 @@
   transform: scale(0.98);
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
+.header-menu-scroll .version {
+  display: flex;
+  gap: 1rem;
+  justify-content: end;
+}
+.header-menu-scroll .version a {
+  font-size: 1.5rem;
+  font-family: var(--font-mansalva);
+  text-decoration: none;
+  color: white;
+}
+.header-menu-scroll .version a:hover {
+  color: var(--secondary-color);
+  transform: scale(0.8);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+.header-menu-scroll .version .active {
+  color: var(--secondary-color);
+  pointer-events: none;
+  cursor: default;
+}
 
 @keyframes slideFadeIn {
   0% {
@@ -103,6 +137,9 @@
   }
   .header-menu {
     display: none;
+  }
+  .header-menu-link {
+    display: none !important;
   }
   .header-menu-scroll {
     display: block;

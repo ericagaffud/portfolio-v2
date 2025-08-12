@@ -28,7 +28,7 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
 }
 
-.version {
+.version-footer {
     padding-block: 2rem;
     display: flex;
     justify-content: end;
@@ -73,5 +73,9 @@ h1, h2, h3, h4, h5, h6 {
 @media only screen and (min-width: 1024px) {
     body {
         margin-inline: clamp(5rem, 1.667rem + 5.208vw, 10rem) !important;
+    }
+
+    .version-footer {
+        display: none;
     }
 }
